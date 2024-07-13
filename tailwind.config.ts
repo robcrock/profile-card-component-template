@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,7 +18,27 @@ const config = {
       },
     },
     extend: {
+      // Custom screen breakpoints
+      screens: {
+        mobile: "375px", // Typically for targeting mobile devices
+        desktop: "1440px", // Typically for targeting desktop devices
+      },
+      // Typography settings
+      fontFamily: {
+        "kumbh-sans": ['"Kumbh Sans"', "sans-serif"], // Ensure to include fallback font
+      },
+      fontSize: {
+        body: "18px", // Custom font size for body copy
+      },
+      fontWeight: {
+        normal: "400", // Normal weight
+        bold: "700", // Bold weight
+      },
       colors: {
+        "dark-cyan": "hsl(185, 75%, 39%)",
+        "very-dark-blue": "hsl(229, 23%, 23%)",
+        "dark-grayish-blue": "hsl(227, 10%, 46%)",
+        "dark-gray": "hsl(0, 0%, 59%)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -75,6 +95,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
